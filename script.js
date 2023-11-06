@@ -6,7 +6,7 @@ const rssUrl = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&
 
 const url = proxyUrl + rssUrl;
 
-fetch(rssUrl)
+fetch(rssUrl, {mode: no-cors})
     .then(response => response.text())
     .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
     .then(data => {
